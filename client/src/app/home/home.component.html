@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="form-search-block">
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+          <input placeholder="Search for programming related queries..." formControlName="q" name="search" aria-label="Search" type="text">
+          <button><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+    </div>
+    <span *ngIf="searchlist.length > 0">
+        <div class="search_result">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of searchlist">
+              <span *ngIf="item.uri != 'noresult'">
+                <a href="/concepts?post={{item.uri}}">{{item.highlight}}</a>
+              </span>
+              <span *ngIf="item.uri == 'noresult'">
+                  {{item.highlight}}
+              </span>
+            </li>
+          </ul> 
+        </div>
+    </span>
+    <div class="text-center">
+      <h2>What we offer</h2>
+      <p>We are offering programming tutorials with easy to grasp content and examples. our approach is to provide the content in a concise manner. our aim is to provide the rich content, so that students, professionals, enthusiasts etc will learn something useful and improve on their skillsets. Do like our social pages, so that other people can get benefits of our rich content. </p>
+    </div>
+    <div class="grayBlock">
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 padding5">
+                  <div class="innerBlock">
+                      <div class="text-center"><div class="iconDiv about"></div></div>
+                      <div class="innerContent text-center">
+                          <h3>What is Lorem Ipsum?</h3> 
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it...</p>
+                      </div>
+                      <div class="text-center"><a href="#" class="btn">Read more</a></div>
+                  </div>
+              </div>
+              
+              <div class="col-xs-12 col-sm-4 col-md-4 padding5">
+                  <div class="innerBlock">
+                      <div class="text-center"><div class="iconDiv topic"></div></div>
+                      <div class="innerContent text-center">
+                          <h3>What is Lorem Ipsum?</h3> 
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it...</p>
+                      </div>
+                      <div class="text-center"><a href="#" class="btn">Read more</a></div>
+                  </div>
+              </div>
+              
+              <div class="col-xs-12 col-sm-4 col-md-4 padding5">
+                  <div class="innerBlock">
+                      <div class="text-center"><div class="iconDiv contacticon"></div></div>
+                      <div class="innerContent text-center">
+                          <h3>What is Lorem Ipsum?</h3> 
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it...</p>
+                      </div>
+                      <div class="text-center"><a href="#" class="btn">Read more</a></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="text-center">
+      <h2>Write for us</h2>
+      <p>If you want to join the community to achieve the common goal of teaching the learners and helping each other grow as individual and as a community, then you can do so by writing articles of any choice and share it on the following email <br><button type="button" class="btn btn-outline-primary"><a href="mailto:arjun.sisodia8@gmail.com">Click to write an article</a></button></p>
+    </div>
+  </div>
+
+

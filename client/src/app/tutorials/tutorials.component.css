@@ -1,0 +1,14 @@
+pre, code {
+  font-family: monospace, monospace;
+}
+pre {
+  overflow: auto;
+}
+pre > code {
+  display: block;
+  padding: 1rem;
+  word-wrap: normal;
+}
+.tutorial-container{
+  margin: 20px 250px 20px 250px
+}

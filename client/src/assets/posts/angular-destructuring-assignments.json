@@ -1,0 +1,1 @@
+{"heading":"fdgdfgdfgdfg","tags":"fgdfgdf","content":"\nlet obj = {\n \"person\": {\n \"Name\": \"Arjun Sisodia\",\n \"Designation\": \"Software Engineer\",\n \"Age\": \"27\"\n }\n \"animal\": \"dog\",\n \"printname\": param =>{\n \tconsole.log(param);\n }\n};\n\nconst {person, animal, printname} = obj;\nconst {Name, Designation, Age} = person;\n\nprintname(Name);"}

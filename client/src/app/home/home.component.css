@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+form.example input[type=text] {
+    margin-left: 250px;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 40%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.welcome-text{
+    margin-top: 100px;  
+}
+
+.what-we-offer{
+    margin-top: 50px;
+}
+
+/* a { color: #ff9900; background: #fff4a3; text-decoration: none; } */
+
+/* a:hover { color: #ffcc66 } */
+
+.social {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  
+  .fa-pinterest {
+    background: #cb2027;
+    color: white;
+  }
+  
+  .fa-snapchat-ghost {
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  .social-icons{
+      margin-top: 20px;
+      padding-bottom: 80px;
+  }
+
+  .color-red{
+    color: red;
+  }
+  
+  .search_result{
+    max-width: 600px;
+    margin-left: 250px;
+  }
+  

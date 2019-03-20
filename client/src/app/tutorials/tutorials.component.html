@@ -1,0 +1,11 @@
+
+<div class="container" *ngIf="!topic_flag">
+    <h2>{{heading}}</h2>
+    <span class="label label-primary">{{tags}}</span>
+    <hr>
+    {{postcontent}}
+</div>
+
+<div class="container" *ngIf="topic_flag">
+    <app-category-detail [topicName]='topicName'></app-category-detail>
+</div>
