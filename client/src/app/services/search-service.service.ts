@@ -5,11 +5,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SearchServiceService {
+  SERVER_PATH: string = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
   search(term) {
-    const SERVER_PATH = 'http://localhost:3000/';
-    const endpoint = `${SERVER_PATH}api/gettopics/${term}`
+    const endpoint = `${this.SERVER_PATH}/api/gettopics/${term}`
+    console.log(endpoint)
     return this.http.get(endpoint)
   }
 }

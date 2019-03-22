@@ -10,7 +10,7 @@
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let item of searchlist">
               <span *ngIf="item.uri != 'noresult'">
-                <a href="/concepts?post={{item.uri}}">{{item.highlight}}</a>
+                <a routerLink="/concepts" [queryParams]="{ topic: item.type, id: item.id }">{{item.highlight}}</a>
               </span>
               <span *ngIf="item.uri == 'noresult'">
                   {{item.highlight}}

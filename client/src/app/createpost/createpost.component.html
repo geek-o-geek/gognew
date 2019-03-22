@@ -1,8 +1,10 @@
 <div class="container-fluid">
 {{msg}}
 <div class="row top-50">
-<div class="col-sm-12 col-md-12 col-lg-12">
-  <form [formGroup]="createpostForm" (ngSubmit)="onSubmit($event)"> 
+<div class="col-sm-12 col-md-9 col-lg-9" style="margin-left: 200px">
+  <a id="logout" (click)="logout()">logout</a>
+
+  <form [formGroup]="createpostForm" (ngSubmit)="onSubmit()"> 
       <div class="heading"> 
           <label for="heading">Heading 
             <span *ngIf="createpostForm.get('heading').hasError('required')" class="color-red">*</span>
@@ -25,9 +27,12 @@
           <label for="content">Content 
             <span *ngIf="createpostForm.get('content').hasError('required')" class="color-red">*</span>
           </label>
-          <textarea formControlName="content" placeholder="Write something.." style="height:200px"></textarea>
+          <br>
+          <button class="btn-sm btn-primary btn margin-left-10" id="code">Code</button>
+          <button class="btn-sm btn-primary btn margin-left-10" id="para">Para</button>
+          <textarea formControlName="content" placeholder="Write something useful.." style="height: 200px"></textarea>
       </div>
-      <input type="submit" value="Submit" [ngClass]="{'disable-btn':!createpostForm.valid}" [disabled]="!createpostForm.valid">     
+      <input type="submit" value="post" [ngClass]="{'disable-btn':!createpostForm.valid}" [disabled]="!createpostForm.valid">     
     </form>
 </div>
 </div>

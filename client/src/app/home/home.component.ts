@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';      
-import { SearchServiceService } from '../services/search-service.service';    
+import { SearchbarService } from '../services/searchbar.service';    
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,8 @@ export class HomeComponent implements OnInit {
   searchForm: FormGroup;
   search_term: any;
   searchlist: any = [];
-  constructor(private searchService: SearchServiceService, private formBuilder: FormBuilder) { }
+  noresult: boolean = false
+  constructor(private searchService: SearchbarService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
@@ -32,7 +33,9 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(){
-    this.searchlist = this.searchService.search(this.search_term);
+    this.searchService.search(this.search_term).subscribe(res => { console.log(res)
+      this.searchlist = res
+    }, err => this.noresult = true)
   }
 
 }

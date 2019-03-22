@@ -45,4 +45,8 @@ input[type=submit]:hover {
   .example-container > * {
     width: 100%;
   }
+
+  #logout{
+    cursor: pointer; float: right;
+  }
   

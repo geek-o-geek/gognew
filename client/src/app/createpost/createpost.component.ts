@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { CreatepostService } from '../services/createpost.service'
+import { AdminauthService } from '../services/adminauth.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-createpost',
@@ -13,7 +15,10 @@ export class CreatepostComponent implements OnInit {
   postobj: any = "";
   msg: any = ""
 
-  constructor(private formBuilder: FormBuilder, private createPost: CreatepostService) { }
+  constructor(private formBuilder: FormBuilder, 
+    private AdminauthService: AdminauthService,
+    private router: Router,
+    private createPost: CreatepostService) { }
 
   ngOnInit() {
     this.createpostForm = this.formBuilder.group({
@@ -32,13 +37,18 @@ export class CreatepostComponent implements OnInit {
     });
   }
 
-  onSubmit(e){
+  onSubmit(){
     this.createpostForm.reset();
     this.createPost
     .createPost(this.postobj)
     .subscribe(res =>{
       this.msg = res
     }, err => console.log(err))
+  }
+
+  logout(){
+    this.AdminauthService.logout()
+    this.router.navigateByUrl('/admin');
   }
 
 }
