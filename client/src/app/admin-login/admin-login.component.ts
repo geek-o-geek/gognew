@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { AdminServiceService } from "../services/admin-service.service"
 import { AdminauthService } from "../services/adminauth.service"
 import { first } from 'rxjs/operators';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
   loginForm: FormGroup;
-  isAuthenticated: boolean
+  isAuthenticated: boolean = true
 
   constructor(private adminService: AdminServiceService,
     private AdminauthService: AdminauthService,
@@ -25,6 +25,10 @@ export class AdminLoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    this.loginForm.valueChanges.subscribe(res => {
+      this.isAuthenticated = true 
+    })
   }
 
   onSubmit(){
@@ -33,12 +37,13 @@ export class AdminLoginComponent implements OnInit {
     .pipe(first())
     .subscribe(
         data => {
-          console.log(data)
             this.isAuthenticated = true 
             this.router.navigate(["/createpost"]);
         },
-        error => this.isAuthenticated = false )
-      
+        error => {
+          console.log(error)
+          this.isAuthenticated = false 
+        })
   }
 
 }

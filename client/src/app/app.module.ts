@@ -23,6 +23,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component'
 import { AdminauthGuard } from './guards/auth.guard';
 import { AdminauthService } from './services/adminauth.service';
+import { Html2textPipe } from './pipes/html2text.pipe';
+import { RemoveSpecialCharPipe } from './pipes/remove-special-char.pipe';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -50,7 +52,9 @@ const appRoutes: Routes = [
     UcfirstPipe,
     AdminLoginComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    Html2textPipe,
+    RemoveSpecialCharPipe
   ],
   imports: [
     BrowserModule,

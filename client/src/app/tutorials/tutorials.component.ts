@@ -45,7 +45,7 @@ export class TutorialsComponent implements OnInit {
       const res: any = data;
       
       const {content, heading, tags} = res;
-      this.postcontent = content;
+      this.postcontent = content
       this.heading = this.ucfirst(heading);
       this.tags = tags;
     }, err => console.log(err))

@@ -2,7 +2,7 @@
   <div class="col-sm-4"></div>
   <div class="col-sm-4">
     <h2 class="text-center">Admin Login</h2>
-    <p color="red" *ngIf="isAuthenticated && !isAuthenticated">Either username or password is incorrect</p>
+    <p style="color: red;" *ngIf="!isAuthenticated">Either username or password is incorrect</p>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="username">Username</label>

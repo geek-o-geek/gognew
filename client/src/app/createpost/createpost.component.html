@@ -28,11 +28,9 @@
             <span *ngIf="createpostForm.get('content').hasError('required')" class="color-red">*</span>
           </label>
           <br>
-          <button class="btn-sm btn-primary btn margin-left-10" id="code">Code</button>
-          <button class="btn-sm btn-primary btn margin-left-10" id="para">Para</button>
           <textarea formControlName="content" placeholder="Write something useful.." style="height: 200px"></textarea>
       </div>
-      <input type="submit" value="post" [ngClass]="{'disable-btn':!createpostForm.valid}" [disabled]="!createpostForm.valid">     
+      <input type="submit" value="Post something useful to the world" [ngClass]="{'disable-btn':!createpostForm.valid}" [disabled]="!createpostForm.valid">     
     </form>
 </div>
 </div>

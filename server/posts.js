@@ -1,14 +1,2 @@
-const posts = {
-    angular:
-    [
-        {id: 1, uri: "destructuring-assignments", highlight: "Know about ES6 destructuring assignments"}
-    ],
-    javascript: [
-        {id: 2, uri: "sort-es6", highlight: "Sort based on ES6 functions"},
-        {id: 3, uri: "test", highlight: "test article"},
-        {id: 4, uri: "testagain", highlight: "anothet test article"},
-        {id: 5, uri: "testpratham", highlight: "another pratham article"}
-    ]
-}
-
-module.exports.posts = posts;
+let posts = {"angular":[{"id":1,"uri":"jshdsh","highlight":"wkjdhd"}],"javascript":[{"id":1,"uri":"fdvjdfjjdf","highlight":"dwdfhsdf"},{"id":2,"uri":"test22","highlight":"test22"},{"id":3,"uri":"test31","highlight":"<p>hello there</p>\n<pre><co"},{"id":4,"uri":"test546","highlight":"<p>\nWhat is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of typ"},{"id":5,"uri":"test6754","highlight":"<p>test 1234567</p>\n<pre><cod"}],"react":[{"id":1,"uri":"test67","highlight":"<p>\nWhat is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type"}]}
+    module.exports = {'posts': posts}

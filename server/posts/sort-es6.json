@@ -1,1 +1,0 @@
-{"heading":"dfdsfds","tags":"dfdsfd","content":"\nconst sort = (arr) => {\n for(let i=1; i<arr.length; i++){\n \tfor(let j=0; j<i; j++){\n if(arr[i] < arr[j]){\n [arr[i], arr[j]] = [arr[j], arr[i]];\n \t}\n } \n }\n return arr;\n}\nconst array_to_sort = [5, 2, 1, 8];\nconsole.log(sort(array_to_sort));\n"} 

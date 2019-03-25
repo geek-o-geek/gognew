@@ -137,6 +137,7 @@ app.get('/api/gettopics/:topic/:id', (req, res) => {
         console.log(`File streaming ended`)
     })
 })
+
 /* create a post */
 app.post('/api/createpost', (req, res) => {
     const schema = {
@@ -155,10 +156,32 @@ app.post('/api/createpost', (req, res) => {
 
     writestream.write(JSON.stringify(req.body));
     writestream.end('');
-    res.status(200).send('Successfully posted')
+    
     writestream.on('close', () => {
         console.log('all done')
     })
+
+    const { heading, tags, content } = req.body
+    let tagBasedPosts = posts[tags] || []
+    let length = tagBasedPosts.length
+
+    let pushObj = { 
+        id: length+1, 
+        uri: heading, 
+        highlight: content.substr(0, Math.floor(content.length/3)) 
+    } 
+    
+    tagBasedPosts.push(pushObj)   
+
+    let obj = Object.assign({}, posts)
+    obj[tags] = tagBasedPosts
+    obj = JSON.stringify(obj)
+
+    const str = `let posts = ${obj}
+    module.exports = {'posts': posts}`
+
+    fs.writeFile('posts.js', str, function(){console.log('done')})   
+    res.status(200).send('Successfully posted')
 })
 
 const PORT = process.env.PORT || 3000;

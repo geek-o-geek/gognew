@@ -34,19 +34,20 @@ input[type=submit]:hover {
 
 /* to set the color red of paragraph */
 .color-red{
-    color: red;
+  color: red;
 }
 
 .example-container {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+}
   
-  .example-container > * {
-    width: 100%;
-  }
+.example-container > * {
+  width: 100%;
+}
 
-  #logout{
-    cursor: pointer; float: right;
-  }
+#logout{
+  cursor: pointer; float: right;
+}
+  
   

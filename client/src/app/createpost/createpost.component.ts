@@ -4,6 +4,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { CreatepostService } from '../services/createpost.service'
 import { AdminauthService } from '../services/adminauth.service'
 import { Router } from '@angular/router';
+import { AdminServiceService } from "../services/admin-service.service"
 
 @Component({
   selector: 'app-createpost',
@@ -15,12 +16,14 @@ export class CreatepostComponent implements OnInit {
   postobj: any = "";
   msg: any = ""
 
-  constructor(private formBuilder: FormBuilder, 
+  constructor(private adminService: AdminServiceService,
+    private formBuilder: FormBuilder, 
     private AdminauthService: AdminauthService,
     private router: Router,
     private createPost: CreatepostService) { }
 
   ngOnInit() {
+    this.adminService.removeTemplate()
     this.createpostForm = this.formBuilder.group({
       heading: ['', Validators.required],
       tags: ['', Validators.required],
